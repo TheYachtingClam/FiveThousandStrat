@@ -12,7 +12,7 @@ namespace FiveThousandStrat
 
         void Reset(int minimumWin);
 
-        List<int> SaveItems(List<int> currentItems);
+        List<Tuple<List<int>, int>> SaveItems(List<int> currentItems);
 
         bool WillIQuit(List<int> currentItems);
     }

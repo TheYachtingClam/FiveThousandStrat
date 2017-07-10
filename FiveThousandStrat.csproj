@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FiveThousandScorer.cs" />
+    <Compile Include="GameStats.cs" />
     <Compile Include="IScore.cs" />
     <Compile Include="IStrat.cs" />
     <Compile Include="Program.cs" />

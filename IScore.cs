@@ -9,5 +9,7 @@ namespace FiveThousandStrat
     interface IScore
     {
         int Score(List<int> list);
+
+        List<Tuple<List<int>,int>> ScoreList(List<int> list);
     }
 }

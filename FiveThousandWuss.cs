@@ -29,15 +29,25 @@ namespace FiveThousandStrat
         }
 
         /// <inheritdoc />
-        public List<int> SaveItems(List<int> currentItems)
+        public List<Tuple<List<int>, int>> SaveItems(List<int> currentItems)
         {
-            throw new NotImplementedException();
+            var items = _scorer.ScoreList(currentItems);
+            _totalScore += _scorer.Score(currentItems);
+            
+            return items;
         }
 
         /// <inheritdoc />
         public bool WillIQuit(List<int> currentItems)
         {
-            throw new NotImplementedException();
+            if(_totalScore > _minWin)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         #endregion

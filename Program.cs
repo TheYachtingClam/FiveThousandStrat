@@ -13,7 +13,15 @@ namespace FiveThousandStrat
             var scorer = new FiveThousandScorer();
             var strat = new FiveThousandWuss();
             var controller = new GameController(scorer, strat);
-            controller.PlayGame();
+            var statCollection = new List<GameStats>();
+            for(int i = 0;i < 10000;i++)
+            {
+                var roundScore = controller.PlayGame();
+                statCollection.Add(roundScore);
+            }
+
+            Console.WriteLine("AvgRoundScore: {0}", statCollection.Average<GameStats>(s => s.AvgScore));
+            Console.ReadKey();
         }
     }
 }
